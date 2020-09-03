@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a993ffa6d8b84f2ca4dd286772cea895" Name="Diagram1">
+        <EntityTypeShape EntityType="SMSModel.CourseCompletions" Width="1.5" PointX="12.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Courses" Width="1.5" PointX="11" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Lessons" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.LessonsViewed" Width="1.5" PointX="5.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.UserDetails" Width="1.5" PointX="8.375" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="SMSModel.FK_CourseCompletions_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_CourseCompletions_UserDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Lessons_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_LessonsViewed_Lessons" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_LessonsViewed_UserDetails" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
