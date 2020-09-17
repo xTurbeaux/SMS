@@ -230,12 +230,12 @@ p, address {
 }
 
 .parallax-window-2 {
-  min-height: 220px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background: transparent;
-  position: relative;
+    min-height: 220px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    position: relative;
 }
 
 .parallax-mirror {
@@ -851,3 +851,6 @@ address {
 .panel p {
   padding: 5px 20px 30px;
 }
+
+
+
