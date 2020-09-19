@@ -1,7 +1,7 @@
 ﻿@model SMS.UI.MVC.Models.LoginViewModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -14,39 +14,26 @@
 
 
     <!--User Id column-->
-    <div class="col-md-6">
+    <div class="col-md-4">
         @Html.TextBoxFor(lvm => lvm.Email, new { @class = "form-control", placeholder = "Email" })
         @Html.ValidationMessageFor(lvmValue => lvmValue.Email, "", new { @class = "text-danger" })
-        <p class="accordion">
+        <p class="tm-btn-right tm-btn tm-paging-link tm-btn-success">
             @Html.ActionLink("Register a new user?", "Register")
         </p>
     </div>
 
     <!--Password Column-->
-    <div class="col-md-6">
-        @Html.PasswordFor(lvm => lvm.Password, new { @class = "form-control tm-paging-link", placeholder = "Password" })
+    <div class="col-md-4">
+        @Html.PasswordFor(lvm => lvm.Password, new { @class = "form-control", placeholder = "Password" })
         @Html.ValidationMessageFor(lvmValue => lvmValue.Password, "", new { @class = "text-danger" })
-        <p class="form-link accordion">
+        <p class="tm-btn-right tm-btn tm-paging-link tm-btn-success">
             @Html.ActionLink("Forget your password?", "ForgetPassword")
         </p>
-    </div>
-
-
-</div>
-
-<div class="row">
-    <!--Log in Button Column-->
-    <div class="col-md-4">
     </div>
 
     <div class="col-md-4 cen">
         <input type="submit" value="Log In" class="tm-paging-link" />
     </div>
-
-    <div class="col-md-4">
-    </div>
-
-
 </div>
 
 

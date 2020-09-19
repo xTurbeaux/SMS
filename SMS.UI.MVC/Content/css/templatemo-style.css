@@ -858,8 +858,10 @@ address {
         padding: 5px 20px 30px;
     }
 
-.cen {
-    align-items: center;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.form-control{
+    border-bottom-style: none;
+}
+
+.form-link{
+    margin-top: 20px;
 }
