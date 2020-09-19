@@ -17,7 +17,7 @@ namespace SMS.UI.MVC.Controllers
 
         [HttpGet]
         [Authorize]
-        public ActionResult About()
+        public ActionResult Courses()
         {
             ViewBag.Message = "Your app description page.";
 
