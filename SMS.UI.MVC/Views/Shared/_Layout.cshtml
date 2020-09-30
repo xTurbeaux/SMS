@@ -38,6 +38,20 @@ https://templatemo.com/tm-539-simple-house
                                 <li class="tm-nav-li"><a href="@Url.Action("Index", "Courses")" class="tm-nav-link">Courses</a></li>
                                 <li class="tm-nav-li"><a href="@Url.Action("Contact", "Home")" class="tm-nav-link">Contact</a></li>
                                 <li class="tm-nav-li"><a href="@Url.Action("Login", "Account")" class="tm-nav-link">Sign In</a></li>
+
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li tm-nav-li>
+                                        <span class="opener">Admin</span>
+                                        <ul tm-nav-ul>
+                                            <li class="tm-nav-li"><a href="@Url.Action("Roles", "Index", "UsersAdmin")" class="tm-nav-link">User Admin</a></li>
+                                            <li class="tm-nav-li"><a href="@Url.Action("Users", "Index", "Roles Admin")" class="tm-nav-link">Roles Admin</a></li>
+                                            <li class="tm-nav-li"><a href="@Url.Action("Index", "Courses")" class="tm-nav-link">Courses</a></li>
+                                            <li class="tm-nav-li"><a href="@Url.Action("Index", "Lessons")" class="tm-nav-link">Lessons</a></li>
+                                        </ul>
+                                    </li>
+                                }
+
                             </ul>
                         </nav>
                     </div>

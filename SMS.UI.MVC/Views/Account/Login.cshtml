@@ -4,43 +4,13 @@
     ViewBag.Title = "Login";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Title.</h2>
 
 <div class="row">
-    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-    }
-
-
-    <!--User Id column-->
-    <div class="col-md-4">
-        @Html.TextBoxFor(lvm => lvm.Email, new { @class = "form-control", placeholder = "Email" })
-        @Html.ValidationMessageFor(lvmValue => lvmValue.Email, "", new { @class = "text-danger" })
-        <p class="tm-btn-right tm-btn tm-paging-link tm-btn-success">
-            @Html.ActionLink("Register a new user?", "Register")
-        </p>
-    </div>
-
-    <!--Password Column-->
-    <div class="col-md-4">
-        @Html.PasswordFor(lvm => lvm.Password, new { @class = "form-control", placeholder = "Password" })
-        @Html.ValidationMessageFor(lvmValue => lvmValue.Password, "", new { @class = "text-danger" })
-        <p class="tm-btn-right tm-btn tm-paging-link tm-btn-success">
-            @Html.ActionLink("Forget your password?", "ForgetPassword")
-        </p>
-    </div>
-
-    <div class="col-md-4 cen">
-        <input type="submit" value="Log In" class="tm-paging-link" />
-    </div>
-</div>
-
-
-@*<div class="row">
     <div class="col-md-8">
         <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
                 @Html.AntiForgeryToken()
                 <h4>Use a local account to log in.</h4>
                 <hr />
@@ -81,9 +51,17 @@
             }
         </section>
     </div>
-</div>*@
 
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new SMS.UI.MVC.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+
+    </div>
+</div>
 
 @section Scripts {
+    <script src="~/Content/js/parallax.min.js"></script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }
