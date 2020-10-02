@@ -846,6 +846,8 @@ address {
     content: '\f0d7';
 }
 
+
+
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     background-color: white;
@@ -869,6 +871,8 @@ address {
 
 
 
+
+/* Details Partial */
 #courseContainer {
     border: 4px solid #535BA0;
     box-shadow: 15px 15px gray;
@@ -900,8 +904,6 @@ address {
     margin-left: 41%;
 }
 
-/*#bookFooter {*/
-/*}*/
 
 #bookFooterLeft {
     float: left;
@@ -917,16 +919,8 @@ label {
     font-weight: 700;
 }
 
-#bookContainer #BookStatusID,
-#bookContainer #PublisherID,
-#bookContainer #GenreID,
-#bookContainer #UnitsSold,
-#bookContainer #PublishDate {
-    width: 50%;
-    display: inline-block;
-}
 
-#bookContainer #Description {
+#courseContainer #Description {
     height: 5em;
     resize: none;
 }
