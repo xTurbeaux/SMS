@@ -4,39 +4,38 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Courses</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-    </dl>
+<div id="courseContainer">
+    <div id="courseHeader">
+        <div id="courseHeaderLeft"></div>
+        <div id="courseHeaderRight"></div>
+    </div>
 </div>
+
+@Html.DisplayNameFor(model => model.CourseName)
+@Html.DisplayFor(model => model.CourseName)
+
+@Html.DisplayNameFor(model => model.CourseDescription)
+@Html.DisplayFor(model => model.CourseDescription)
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <strong>Author(s):</strong><br />
+    <ul>
+        @{
+            var lessons = Model.Lessons.Where(ba => ba.CourseID == Model.CourseID);
+            foreach (var a in lessons)
+            {
+                <li>@a.LessonTitle</li>
+            }
+        }
+    </ul>
 </p>
+
+
+
+
+
+@Html.DisplayNameFor(model => model.IsActive)
+@Html.DisplayFor(model => model.IsActive)
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+@Html.ActionLink("Back to List", "Index")
