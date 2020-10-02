@@ -6,36 +6,58 @@
 
 <div id="courseContainer">
     <div id="courseHeader">
-        <div id="courseHeaderLeft"></div>
-        <div id="courseHeaderRight"></div>
+        <div id="courseHeaderLeft"><h2></h2>@Html.DisplayFor(model => model.CourseName)</div>
+        <div id="courseHeaderRight">@Html.DisplayFor(model => model.IsActive)</div>
+        <div class="clearfix"></div>
     </div>
+
+    <div id="courseLeft">
+        <p>
+            <strong>
+                @Html.DisplayNameFor(model => model.CourseDescription)
+            </strong>@Html.DisplayFor(model => model.CourseDescription)
+        </p>
+    </div>
+
+    <div id="courseRight">
+        <p>
+            <strong>Lesson(s):</strong><br />
+            <ul>
+                @{
+                    var lessons = Model.Lessons.Where(ba => ba.CourseID == Model.CourseID);
+                    foreach (var a in lessons)
+                    {
+                        <li>@a.LessonTitle</li>
+                    }
+                }
+            </ul>
+        </p>
+    </div>
+
+    <div class="clearfix"></div>
+    <div id="courseFooter">
+        <div id="courseFooterLeft">
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }, new { @class = "btn btn-primary" })
+            }
+        </div>
+        <div id="courseFooterRight">
+            @Html.ActionLink("Back to Courses", "Index")
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+
 </div>
 
-@Html.DisplayNameFor(model => model.CourseName)
-@Html.DisplayFor(model => model.CourseName)
-
-@Html.DisplayNameFor(model => model.CourseDescription)
-@Html.DisplayFor(model => model.CourseDescription)
-
-<p>
-    <strong>Author(s):</strong><br />
-    <ul>
-        @{
-            var lessons = Model.Lessons.Where(ba => ba.CourseID == Model.CourseID);
-            foreach (var a in lessons)
-            {
-                <li>@a.LessonTitle</li>
-            }
-        }
-    </ul>
-</p>
 
 
 
 
 
-@Html.DisplayNameFor(model => model.IsActive)
-@Html.DisplayFor(model => model.IsActive)
+
+
 
 @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
 @Html.ActionLink("Back to List", "Index")
