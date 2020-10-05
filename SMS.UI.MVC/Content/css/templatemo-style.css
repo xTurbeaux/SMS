@@ -127,6 +127,13 @@ html {
     border: 0;
 }
 
+.tm-btn:hover,
+.tm-btn:focus {
+    color: white;
+    background-color: #98999A;
+}
+
+
 .tm-btn-default {
     border: 1px solid #ccc;
     background-color: transparent;
@@ -293,6 +300,13 @@ p, address {
     justify-content: flex-end;
 }
 
+.tmM-nav-ul {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+
 .tm-nav-li {
     list-style: none;
     display: block;
@@ -421,7 +435,7 @@ p, address {
 .tm-paging-item {
     list-style: none;
     display: inline-block;
-    border: 1px solid #2F956D;
+    border: 0.5px #2F956D;
     margin: 7px;
 }
 
@@ -905,7 +919,7 @@ address {
 }
 
 
-#bookFooterLeft {
+#courseFooterLeft {
     float: left;
     width: 49%;
 }
@@ -915,7 +929,7 @@ address {
     text-align: right;
 }
 
-label {
+#label {
     font-weight: 700;
 }
 
@@ -931,4 +945,11 @@ label {
     text-align: center;
     font-style: italic;
     font-weight: 700;
+}
+
+/*Custom CSS For Actionlinks*/
+
+.action {
+    color: #272F2D;
+    text-decoration: none;
 }
