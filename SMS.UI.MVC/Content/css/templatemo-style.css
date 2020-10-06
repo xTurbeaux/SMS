@@ -87,7 +87,7 @@ html {
     .col-md-6 {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
-        max-width: 50%;
+        /*max-width: 50%*/;
     }
 }
 
@@ -435,7 +435,7 @@ p, address {
 .tm-paging-item {
     list-style: none;
     display: inline-block;
-    border: 0.5px #2F956D;
+    border: 1px solid #2F956D;
     margin: 7px;
 }
 
