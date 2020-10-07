@@ -953,3 +953,7 @@ address {
     color: #272F2D;
     text-decoration: none;
 }
+
+.m {
+    border: 1px solid #2F956D;
+}

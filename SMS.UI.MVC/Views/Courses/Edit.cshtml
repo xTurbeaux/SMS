@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2 class="col-12 text-center tm-section-title">Edit Existing Course</h2>
+<h2 class="col-12 text-center tm-section-title">Modify Course</h2>
 
 
 @using (Html.BeginForm())
@@ -18,16 +18,16 @@
 
         <div class="row tm-welcome-section">
             @Html.LabelFor(model => model.CourseName, htmlAttributes: new { @class = "col-12 text-center" })
-            <div class="row tm-welcome-section">
-                @Html.EditorFor(model => model.CourseName, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="row tm-welcome-section m">
+                @Html.EditorFor(model => model.CourseName, new { htmlAttributes = new { @class = "form-control text-center" } })
                 @Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="row tm-welcome-section">
             @Html.LabelFor(model => model.CourseDescription, htmlAttributes: new { @class = "col-12 text-center" })
-            <div class="row tm-welcome-section">
-                @Html.EditorFor(model => model.CourseDescription, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="row tm-welcome-section m">
+                @Html.EditorFor(model => model.CourseDescription, new { htmlAttributes = new { @class = "form-control text-center" } })
                 @Html.ValidationMessageFor(model => model.CourseDescription, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,8 +43,8 @@
         </div>
 
         <div class="row tm-welcome-section">
-            <div class="col-12 text-center">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="row tm-welcome-section">
+                <input type="submit" value="Save" class="col-12 text-center tm-paging-link" />
             </div>
         </div>
     </div>
